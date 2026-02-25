@@ -1,74 +1,56 @@
-ReadersHub is a full-stack web application that allows users to upload, explore, and review books online.
+# 📚 ReadersHub – Book Sharing Web Application  
 
-The platform provides authentication, dynamic book management, and search functionality using PHP and MySQL.
+---
 
-This project was developed to strengthen my understanding of full-stack web development and database integration.
+## 🌟 Project Overview  
 
-🚀 Features
+ReadersHub is a full-stack web application that allows users to upload, explore, and review books online.  
+The platform implements authentication, dynamic content handling, and database integration using PHP and MySQL.
 
-✅ User Registration & Login Authentication
-✅ Upload and Manage Books
-✅ Search Books Dynamically
-✅ Add and View Reviews
-✅ User Profile Page
-✅ MySQL Database Integration
-✅ Session Handling & CRUD Operations
+---
 
-🛠 Tech Stack
-💻 Frontend
+## 🚀 Features  
 
-HTML
+- ✅ User Registration & Login Authentication  
+- 📖 Upload and Manage Books  
+- 🔍 Search Books Dynamically  
+- ⭐ Add and View Reviews  
+- 👤 User Profile Management  
+- 🔐 Session Handling  
+- 🗄 CRUD Operations with MySQL  
 
-CSS
+---
 
-JavaScript
+## 🛠 Tech Stack  
 
-⚙ Backend
+### 💻 Frontend  
+- HTML  
+- CSS  
+- JavaScript  
 
-PHP
+### ⚙ Backend  
+- PHP  
 
-🗄 Database
+### 🗄 Database  
+- MySQL  
 
-MySQL
+### 🔧 Tools  
+- XAMPP  
+- Git & GitHub  
+- VS Code  
 
-🔧 Tools Used
+---
+## 👩‍💻 Author  
 
-XAMPP
+**Mangavalli Ihika**  
+B.Tech – Computer Science and Engineering  
 
-Git & GitHub
+GitHub: https://github.com/ihika16  
 
-VS Code
+---
 
-📂 Project Structure
-readershub-website/
-│
-├── home.php
-├── connection.php
-├── auth.php
-├── upload_book.php
-├── search.php
-├── profile_page.php
-├── bookshare.sql
-└── assets (CSS/JS files)
+**🚀 Successfully Completed a Fully Functional Full-Stack Web Application Demonstrating Practical Knowledge of PHP, MySQL, and Dynamic Web Development.**
 
-⚙️ Installation Guide
+---
 
-1️⃣ Install XAMPP
-2️⃣ Place project inside htdocs
-3️⃣ Import bookshare.sql into phpMyAdmin
-4️⃣ Start Apache & MySQL
-5️⃣ Open in browser:
 
-http://localhost/readershub-website
-
-📚 Learning Outcomes
-
-Implemented authentication using PHP sessions
-
-Designed relational database schema
-
-Performed CRUD operations using MySQL
-
-Connected frontend and backend logic
-
-Improved debugging and problem-solving skills
