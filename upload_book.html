@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Book | BookShare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landing_page.css">
+    <style>
+        .form-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+
+        .form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-wrapper h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.error {
+            background-color: #e74c3c;
+        }
+
+        .toast.fadeout {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav>
+            <div class="logo">
+                <a href="landingpage.html">
+                    <span class="logo-icon">📚</span>
+                    Book<span>Share</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="freaturepage.html">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="profile_page.php" class="profile-btn">🥷</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <div class="form-wrapper">
+            <h2>Upload a New Book</h2>
+            <form id="book-form" method="POST">
+                <div class="form-group">
+                    <label for="book-title">Book Name</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-url">Book URL</label>
+                    <input type="url" id="file_url" name="file_url" placeholder="https://example.com/book.pdf" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-description">Book Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="author-name">Author Name</label>
+                    <input type="text" id="author_name" name="author_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="author-bio">Author Bio</label>
+                    <textarea id="author_bio" name="author_bio" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="author-dob">Author Date of Birth</label>
+                    <input type="date" id="author_dob" name="author_dob" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Upload Book</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Sticky header effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Form submission via AJAX
+        document.getElementById("book-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch("upload_book.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    showToast(data.message, "success");
+                    form.reset();
+                } else {
+                    showToast("Something went wrong.", "error");
+                }
+            })
+            .catch(err => {
+                showToast("Error uploading book.", "error");
+                console.error(err);
+            });
+        });
+
+        // Toast popup
+        function showToast(message, type = "success") {
+            const toast = document.createElement("div");
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add("fadeout");
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

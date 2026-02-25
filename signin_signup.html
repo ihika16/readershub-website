@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookShare - Sign In or Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+    <header id="main-header">
+        <nav>
+            <div class="logo">
+                <a href="landingpage.html">
+                    <span class="logo-icon">📚</span>
+                    Book<span>Share</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="freaturepage.html">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="login-tab">Sign In</button>
+                <button class="tab-btn" id="signup-tab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active" action="auth.php" method="post">
+                <h2>Welcome Back!</h2>
+                <p class="auth-subtitle">Enter your credentials to access your account</p>
+                
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email"  name="email" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="login-password" name="password" placeholder="Your password" required>
+                        <button type="button" class="toggle-password">👁️</button>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="forgot-password.html">Forgot Password?</a>
+                    </div>
+                </div>
+                
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                
+                <div class="social-login">
+                    <p>Or sign in with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social google">
+                            G
+                        </button>
+                        <button type="button" class="btn btn-social facebook">
+                            f
+                        </button>
+                        <button type="button" class="btn btn-social twitter">
+                            t
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="signup-form" class="auth-form" action="add_user.php" method="POST">
+                <h2>Create an Account</h2>
+                <p class="auth-subtitle">Join our community of book lovers</p>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="First name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name"  name="last_name" placeholder="Last name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                        <button type="button" class="toggle-password">👁️</button>
+                    </div>
+                    <div class="password-strength">
+                        <span class="strength-bar"></span>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                        <button type="button" class="toggle-password">👁️</button>
+                    </div>
+                </div>
+                
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                
+                <div class="social-login">
+                    <p>Or sign up with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social google">
+                            G
+                        </button>
+                        <button type="button" class="btn btn-social facebook">
+                            f
+                        </button>
+                        <button type="button" class="btn btn-social twitter">
+                            t
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="auth-sidebar">
+            <div class="auth-sidebar-content">
+                <h2>Join Our Community</h2>
+                <p>Share books, discover new titles, and connect with fellow book lovers around the world.</p>
+                <ul class="auth-benefits">
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        Access thousands of books
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        Share your collection
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        Discuss with book lovers
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        Get personalized recommendations
+                    </li>
+                </ul>
+                <div class="testimonial-highlight">
+                    <div class="quote">"BookShare has completely transformed my reading experience. I've discovered amazing books I would have never found otherwise!"</div>
+                    <div class="quote-author">
+                        <img src="/api/placeholder/50/50" alt="User Avatar">
+                        <span>Emily Chen, Member since 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="auth-footer">
+        <div class="copyright">
+            &copy; 2025 BookShare. All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="auth.js"></script>
+</body>
+</html>

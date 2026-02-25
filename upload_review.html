@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review | BookShare</title>
+    
+<link rel="stylesheet" href="landing_page.css">
+
+</head>
+<body class="auth-page">
+<header>
+    <nav>
+        <div class="logo">
+            <a href="home.html"><span class="logo-icon">📚</span>Book<span>Share</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profile_page.php">Profile</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="auth-container">
+    <div class="auth-card">
+        <h2>Add Review</h2>
+        <form action="add_review.php" method="post" enctype="multipart/form-data">
+            
+<input type="number" name="book_id" placeholder="Book ID" required><br>
+<input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required><br>
+<textarea name="comment" placeholder="Your Review"></textarea><br>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
